@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Furina-77-best.github.io</id>
+    <title>Gridea</title>
+    <updated>2026-02-26T08:43:03.673Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Furina-77-best.github.io"/>
+    <link rel="self" href="https://Furina-77-best.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://Furina-77-best.github.io/images/avatar.png</logo>
+    <icon>https://Furina-77-best.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[与编程相关的words]]></title>
+        <id>https://Furina-77-best.github.io/post/yu-bian-cheng-xiang-guan-de-words/</id>
+        <link href="https://Furina-77-best.github.io/post/yu-bian-cheng-xiang-guan-de-words/">
+        </link>
+        <updated>2026-02-24T11:25:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="words">words</h1>
+<ol>
+<li>initialize v. 初始化（计）.<br>
+<strong>编程里的核心定义</strong><br>
+给变量 / 数组 / 对象 分配内存并赋予一个确定的、可用的值（而非内存里的随机 “垃圾值”），就叫 “初始化”；guess_is_initialized 这个变量名直译就是 “guess 是否已初始化”。</li>
+<li>implement核心意思是 “实现”，特指把设计、思路、需求、算法等抽象的东西，用代码写出来、落地成可运行的功能。implement 侧重 “把想法变成可运行的代码”，更强调 “落地、完成”。</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.24日-C语言猜数字游戏pro]]></title>
+        <id>https://Furina-77-best.github.io/post/224-ri-c-yu-yan-cai-shu-zi-you-xi-pro/</id>
+        <link href="https://Furina-77-best.github.io/post/224-ri-c-yu-yan-cai-shu-zi-you-xi-pro/">
+        </link>
+        <updated>2026-02-24T08:50:50.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="代码">代码</h1>
+<h1 id="is_valid函数错误代码">is_valid函数错误代码</h1>
+<pre><code class="language-c">int is_valid(int guess[])//检验玩家输入是否合法（首位非零，没有重复数字）,返回1说明合法，返回0说明不合法
+{
+	int flag = 0;
+	int num = 0;
+	int i = 0;
+	int used[4] = { 0 };
+	while (i == 0)
+	{
+		if (guess[i] != 0)
+		{
+			num = guess[i++];
+			used[num] = 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	for (i = 0; i &lt; 4; i++)
+	{
+		if (guess[i] == guess[i + 1])
+		{
+			flag = flag + 1;
+		}
+	}
+	if (flag &gt;= 1)
+	{
+		return 0;
+	}
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.22日-C语言-结构体（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/222-ri-c-yu-yan-jie-gou-ti-chu-jie/</id>
+        <link href="https://Furina-77-best.github.io/post/222-ri-c-yu-yan-jie-gou-ti-chu-jie/">
+        </link>
+        <updated>2026-02-22T10:51:22.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="结构体">结构体</h1>
+<p>结构是一些值的集合，这些值称为成员变量。结构的每个成员可以是不同类型得变量！<br>
+<strong>总结</strong><br>
+结构体是用户自定义的复合数据类型，而非 C 语言内置类型。<br>
+核心作用是将不同类型的变量<strong>打包</strong>成一个整体，描述复杂对象。</p>
+<h2 id="结构体声明部分">结构体声明部分</h2>
+<pre><code class="language-c">struct peo//声明struct peo 数据类型
+{
+    char name[20];
+    char tele[12];//成员列表
+    char sex[5];
+    int high;
+}变量列表;//声明一个struct peo的数据类型，不能在结构体类型声明环节内部
+//初始化，该部分不占用内存空间！
+int main()
+{
+    struct peo p1;//创建struct peo类型的变量，拿着图纸盖房子，占用内存空间！
+    return 0;
+}
+</code></pre>
+<h2 id="结构体成员">结构体成员</h2>
+<p>结构的成员可以是标量、数组、指针、甚至是结构体变量！</p>
+<pre><code class="language-c">struct stu
+{
+……;
+};
+struct peo
+{
+  struct stu s;
+  int num;
+  int score;
+};
+</code></pre>
+<h2 id="结构体成员访问">结构体成员访问</h2>
+<p>主要通过两个操作符</p>
+<ol>
+<li>结构体变量.member</li>
+<li>结构体变量指针-&gt;member</li>
+</ol>
+<h2 id="结构体传参">结构体传参</h2>
+<p><strong>结论：</strong><br>
+结构体传参的时候，要传结构体的地址。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.21-C二级指针（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/221-c-er-ji-zhi-zhen-chu-jie/</id>
+        <link href="https://Furina-77-best.github.io/post/221-c-er-ji-zhi-zhen-chu-jie/">
+        </link>
+        <updated>2026-02-21T13:57:20.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="二级指针">二级指针</h1>
+<p>二级指针变量是用来存放<strong>一级指针变量的地址</strong>的！</p>
+<pre><code class="language-c">int a = 10;
+int* pa = &amp;a;
+int** ppa = &amp;pa;
+*(*ppa) = 20;//双重解引用操作
+//*pa = 20;
+printf(&quot;%d\n&quot;,a);
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://Furina-77-best.github.io/post-images/1771683336843.png" alt="" loading="lazy"></figure>
+<h1 id="指针数组">指针数组</h1>
+<p>指针数组是数组！<br>
+用来存放指针的数组是<strong>指针数组</strong>。</p>
+<pre><code class="language-c">用指针数组模拟二维数组
+int main()
+{
+	int arr1[4] = { 1,2,3,4 };
+	int arr2[4] = { 2,3,4,5 };
+	int arr3[4] = { 3,4,5,6 };
+	int* parr[3] = { arr1,arr2,arr3 };
+	int i = 0;
+	for (i = 0; i &lt; 3; i++)//行
+	{
+		int j = 0;
+		for (j = 0; j &lt; 4; j++)//列
+		{
+			printf(&quot;%d &quot;,parr[i][j]);//parr[i][j]并不代表parr是一个二维数组，再次验证了[]只是一个运算符而已，自带解引用功能，arr[i]&lt;=&gt;*(arr+i)
+            //parr[0][j]==arr1[0]&lt;=&gt;*(arr1+0)
+            //parr[i][j]   ---&gt;  *(parr[i]+j)  &quot;parr[i]&quot;可以看成指针数组的一个元素
+		}
+		printf(&quot;\n&quot;);
+	}
+	return 0;
+}//parro == arr1
+//arr1[0] 
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.21日-C语言指针与数组（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/220-ri-c-yu-yan-zhi-zhen-yu-shu-zu-chu-jie/</id>
+        <link href="https://Furina-77-best.github.io/post/220-ri-c-yu-yan-zhi-zhen-yu-shu-zu-chu-jie/">
+        </link>
+        <updated>2026-02-20T08:14:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="c语言指针与数组">C语言指针与数组</h1>
+<h2 id="指针-指针">指针-指针</h2>
+<p>意义：指针减去指针的结果的绝对值代表两个两个指针对应的元素个数！<br>
+注意：指向同一块空间的2个指针才能相减！（比如指向同一个数组）！</p>
+<pre><code class="language-c">int my_strlen(char* str)
+{
+	char* start = str;//记住初始地址
+	while (*str != '\0')//只统计\0之前的字符个数核心代码
+	{
+		str++;
+	}
+	return str - start;//返回str与start中间有几个数字！
+}
+int main()
+{
+	int len = my_strlen(&quot;abcde&quot;);
+	printf(&quot;%d&quot;, len);
+	return 0;
+}
+</code></pre>
+<h2 id="指针的关系运算比大小">指针的关系运算（比大小）</h2>
+<p><strong>标准规定:</strong><br>
+允许指向数组的指针与指向数组最后一个元素后面的那个内存位置的指针比较，但是不允许与允许指向数组元素的指针与指向数组最后一个指向第一个元素之前的那个内存位置的指针进行比较。<img src="https://Furina-77-best.github.io/post-images/1771679708992.png" alt="" loading="lazy"><br>
+p3可以与p2比较，与p1不可以</p>
+<pre><code class="language-c">#define N_VALUES 5
+int main()
+{
+	
+	float value[N_VALUES];
+	float* vp;
+	for (vp = &amp;value[N_VALUES]; vp &gt; &amp;value[0];)
+	{
+		*(--vp) = 0;
+	}
+	return 0;
+}
+</code></pre>
+<h2 id="指针与数组">指针与数组</h2>
+<p>一句话：一般来说数组名是数组首元素的地址，通过这个指针可以间接访问数组的各个元素！<br>
+<strong>补充：</strong></p>
+<ol>
+<li>sizeof(数组名)，计算整个数组的大小，sizeof内部单独放一个数组名，该数组名表示整个数<br>
+组。<code> printf(&quot;%d \n&quot;,sizeof(arr));//40</code></li>
+<li>&amp;数组名，取出的是数组的地址。&amp;数组名，该数组名表示整个数组。<br>
+除此1,2两种情况之外，所有的数组名都表示数组首元素的地址。</li>
+</ol>
+<pre><code class="language-c">void test(int* p, int sz)
+{
+	int i = 0;
+	for (i = 0; i &lt; sz; i++)
+	{
+		printf(&quot;%d &quot;, *(p + i));
+	}
+}
+int main()
+{
+	int arr[10] = { 0 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	test(arr, sz);//将首地址与元素个数传过去
+	return 0;
+}
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.19-C语言-野指针（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/215-c-yu-yan-ye-zhi-zhen/</id>
+        <link href="https://Furina-77-best.github.io/post/215-c-yu-yan-ye-zhi-zhen/">
+        </link>
+        <updated>2026-02-15T13:40:35.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="野指针">野指针</h1>
+<p><strong>概念</strong> ：野指针就是指针指向的位置是不可知的(随机的、不正确的、没有明确限制的)</p>
+<ol>
+<li>没有初始化，不知道指向谁；</li>
+<li>指针越界访问</li>
+<li>指针指向的空间释放</li>
+</ol>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int* test()
+{
+	int a = 10;//局部变量a，作用域在函数每次调用完后，销毁内存空间使用权限，还给OS,但是该空间在内存中还是存在的！
+	return &amp;a;
+}
+int main()
+{
+	int* p = test();//定义p来接收test的返回值（局部变量的地址），调用完后该地址失效，所以p是野指针！
+    //printf(&quot;haha\n&quot;);
+	printf(&quot;%d&quot;, *p);//打印结果是10，但是不代表永远是10,可能被上一次函数栈帧覆盖！
+	return 0;
+}
+</code></pre>
+<h2 id="避免野指针的一些coding-habits">避免野指针的一些coding habits</h2>
+<pre><code class="language-c">1. 指针初始化
+//int * p = NULL;
+if(p!=NULL)
+{
+    *P = 10;
+}
+2. 小心指针越界
+3. 指针指向空间释放即使变成NULL
+4. 避免返回局部变量的地址
+5. 指针使用之前检查有效性
+</code></pre>
+<h1 id="指针运算">指针运算</h1>
+<ul>
+<li>指针+-整数</li>
+<li>指针-指针</li>
+<li>关系运算</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.15日-C语言-指针]]></title>
+        <id>https://Furina-77-best.github.io/post/213-ri-c-yu-yan-zhi-zhen/</id>
+        <link href="https://Furina-77-best.github.io/post/213-ri-c-yu-yan-zhi-zhen/">
+        </link>
+        <updated>2026-02-13T03:33:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="指针">指针</h1>
+<h2 id="首先理解指针的两个要点">首先理解指针的两个要点</h2>
+<p>内存中有很多个小的内存单元，每个内存单元有1Byte。</p>
+<ol>
+<li>指针是内存中一个最小单元的编号，也就是<strong>地址</strong>。</li>
+<li>平时口语中说的指针，通常指的是<strong>指针变量</strong>，用来存放内存地址的变量。</li>
+</ol>
+<p><strong>这里我们就明白:</strong></p>
+<ol>
+<li>在32位的机器上，地址是32个0或者1组成二进制序列，那地址就得用4<strong>byte</strong>的空间来存储，所以一个指针变量的大小就应该是<strong>4byte</strong>。</li>
+<li>那如果在64位机器上，如果有64个地址线，那一个指针变量的大小是8<strong>byte</strong>，才能存放一个地址，所以在64位机器上一个指针变量大小就是<strong>8byte</strong>。</li>
+</ol>
+<h1 id="指针和指针类型">指针和指针类型</h1>
+<h2 id="指针类型的两条意义">指针类型的两条意义</h2>
+<p><strong>结论1：</strong> 指针类型决定了指针在被解引用的时候访问几个字节，有多大的权限（能操作几个字节）<br>
+比如，int*的指针变量，被解引用时可以访问4个字节,char *访问1个字节。</p>
+<pre><code class="language-c">int main()
+{//x86
+    int a = 0x11223344;
+    char* pc = (char*)&amp;a;
+    *pc = 0;//经过调试，发现仅仅更改了1byte的数据：0x00CFFC50  00 33 22 11（0x表示这是16进制的表现形式,00 33 22 11 ，一共8位，两位一字节）
+    return 0;
+}
+int main()
+{
+        int a = 0x11223344;
+        int* pc= &amp;a;
+        *pc = 0;//此时a在内存中是0x 00 00 00 00，一次性被操作了4byte
+        return 0;
+    
+}
+</code></pre>
+<p><strong>结论2：</strong> <strong>指针类型</strong>决定了指针+-1操作的时候，跳过或后退几个字节，决定了步长！</p>
+<pre><code class="language-c">int main()
+{
+	int n = 10;
+	int* pa = &amp;n;
+	char* pc = (char* ) &amp; n;
+	printf(&quot;%p\n&quot;, pa);
+	printf(&quot;%p\n&quot;, pa + 1);//跳过1个int型，也就是4byte，也可以理解位跳过4个内存单元，每个内存单元对应一个地址
+	printf(&quot;%p\n&quot;, pc);
+	printf(&quot;%p\n&quot;, pc+1);//跳过1个char型，也就是1byte
+	return 0;
+}
+</code></pre>
+<p><strong>注意</strong>：即使两个指针变量解引用操作时都可以访问相同的字节、+-时改变的步长一样也不能通用，因为二者指向的对象在内存中的存储方式不一样的！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.11日-C语言-表达式求值，转换]]></title>
+        <id>https://Furina-77-best.github.io/post/210-ri-c-yu-yan-biao-da-shi-qiu-zhi/</id>
+        <link href="https://Furina-77-best.github.io/post/210-ri-c-yu-yan-biao-da-shi-qiu-zhi/">
+        </link>
+        <updated>2026-02-10T00:11:40.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="表达式求值">表达式求值</h1>
+<p>表达式求值关注两个点：</p>
+<ol>
+<li>优先级</li>
+<li>结合性（左结合与右结合）</li>
+</ol>
+<h1 id="隐式类型转换">隐式类型转换</h1>
+<p>C的整型算术运算总是至少以缺省（默认）整型类型的精度来进行的。为了获得这个精度，表达式中的字符和短整型操作数在使用之前被转换为普通整型，这种转换称为<strong>整型提升</strong>。<br>
+<strong>整型提升的意义</strong>：<br>
+表达式的整型运算要在CPU的相应运算器件内执行，CPU内整型运算器(ALU)的操作数的字节长度一般就是int的字节长度，同时也是CPU的通用寄存器的长度。<br>
+因此，即使两个char类型的相加，在CPU执行时实际上也要先转换为CPU内整型操作数的标准长度。<br>
+通用CPU(general-purpose CPU)是难以直接实现两个8比特字节直接相加运算(虽然机器指令中可能有这种字节相加指令)。所以，表达式中各种长度可能小于int长度的整型值，都必须先转换为int或unsigned int，然后才能送入CPU去执行运算。</p>
+<pre><code class="language-c">int main()
+{
+	char c = 1;
+	printf(&quot;%u\n&quot;, sizeof(c));//1
+	printf(&quot;%u\n&quot;, sizeof(+c));//4
+	printf(&quot;%u\n&quot;, sizeof(-c));//4
+	return 0;
+}
+</code></pre>
+<h1 id="算术转换">算术转换</h1>
+<p>往大的转</p>
+<h1 id="操作符的属性">操作符的属性</h1>
+<ol>
+<li>操作符的优先级</li>
+<li>操作符的结合性</li>
+<li>是否控制求值顺序（&amp;&amp; || ?: ,）<br>
+<strong>两个相邻的操作符先先执行哪个？取决于他们的优先级。如果优先级相同，取决于他们的结合性。</strong><br>
+总结：我们写出的表达式如果不能通过操作符的属性确定唯一的计算路径，那这个表达式就是存在问题，也就是问题表达式，我们在写的时候，要尽可能避免这种情况的出现！</li>
+</ol>
+<pre><code class="language-c">int main()
+{
+    int a =1;
+    int b = (++a)+(++a)+(++a);
+    printf(&quot;%d\n&quot;,b);
+    return 0;//在windows上是12，在Linux上是10
+}
+</code></pre>
+<h1 id="表达式练习题">表达式练习题</h1>
+<h2 id="序列中删除指定的数字">序列中删除指定的数字</h2>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+    int i = 0;
+    int del = 0;//del存放期待删除的数字
+    int arr[10]={0};
+    int n = 0;
+    scanf(&quot;%d&quot;,&amp;n);//输入序列表的元素个数
+    for(i = 0;i&lt;n;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;arr[i]);//输入序列表的每个元素
+    }
+    scanf(&quot;%d&quot;,&amp;del);//输入期待删除的数字
+    int j = 0;
+    for(i=0;i&lt;n;i++)//核心部分，下标i用来遍历数组，找期待删除的数字
+    {
+        if(arr[i]!=del)
+        {
+            arr[j++]=arr[i];//用arr[j]来存放不要删除的元素，下标j每存放一次，就进行一次自增，最后j代表存放的元素个数
+        }
+    }
+    for(i=0;i&lt;j;i++)
+    {
+        printf(&quot;%d &quot;,arr[i]);
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="最高分减去最低分">最高分减去最低分</h2>
+<p>两行，第一行为n，表示n个成绩，不会大于10000。</p>
+<p>第二行为n个成绩（整数表示，范围0~100），</p>
+<pre><code class="language-c">int main()
+{
+	int arr[100] = { 0 };
+	int max = 0;//初始化最大为0
+	int min = 100;//初始化最小1
+	int i = 0;
+	int n = 0;
+	scanf(&quot;%d&quot;, &amp;n);
+	for ( i = 0; i &lt; n; i++)
+	{
+		scanf(&quot;%d&quot;, &amp;arr[i]);//边输入，边比较
+        if (arr[i] &gt; max)
+		{
+			max = arr[i];
+		}
+		if (min &gt; arr[i])
+		{
+			min = arr[i];
+		}
+	}
+	
+	
+	int ret = max - min;//求差
+	printf(&quot;%d\n&quot;, ret);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.9日-C语言-操作符（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/29-ri-c-yu-yan-cao-zuo-fu-chu-jie/</id>
+        <link href="https://Furina-77-best.github.io/post/29-ri-c-yu-yan-cao-zuo-fu-chu-jie/">
+        </link>
+        <updated>2026-02-09T01:02:40.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="逻辑操作符">逻辑操作符</h1>
+<h2 id="逻辑与-逻辑或">逻辑与 逻辑或</h2>
+<p><strong>逻辑或</strong>（||）：一真即真，全假才假。<br>
+<strong>逻辑与</strong>（&amp;&amp;）：一假即假，全真才真。<br>
+逻辑或就是或者，逻辑与就是并且的意思！</p>
+<pre><code class="language-c">int main()
+{
+	int i = 0, a = 0, b = 2, c = 3, d = 4;
+	i = a++ &amp;&amp; ++b &amp;&amp; d++;
+	printf(&quot;a = %d\nb = %d\nc = %d\nd = %d\n&quot;, a, b, c, d);
+	return 0;
+}
+//运算规则：
+//&amp;&amp; 左边为假，右边就不计算了
+//  ||  左边为真，右边就不计算了
+//只要逻辑操作符两边的一个式子能够得出整个式子结果就不计算另一个式子。
+</code></pre>
+<p>#条件操作符（三目操作符）<br>
+<code> exp1?exp2:exp3</code></p>
+<h1 id="逗号表达式">逗号表达式</h1>
+<p>逗号表达式，就是用逗号隔开的多个表达式。<br>
+逗号表达式，从左向右依次执行。整个表达式的结果是最后一个表达式的结果。<br>
+(exp1,exp2,exp3);</p>
+<pre><code class="language-c">//代码一
+int a = 1;
+int b = 2;
+int c = (a&gt;b, a=b+10,a,b=a+1);
+//代码二
+a = get_val();
+count_val(a);
+while(a&gt;0)
+{
+    a = get_val();
+    count_val(a);
+}
+改写为逗号表达式
+while(a = get_val()，count_val(a)，a&gt;0)
+{
+    a = get_val();
+    count_val(a);
+}
+</code></pre>
+<h1 id="下标引用-函数调用与结构体成员">下标引用、函数调用与结构体成员</h1>
+<h2 id="下标引用">下标引用</h2>
+<p><code>[]</code></p>
+<pre><code class="language-c">arr[7]-&gt;*(arr+7)-&gt;*(7+arr)-&gt;7[arr]
+[]就是一个下标引用操作符，当指向单个数组元素的时候，可以写成上述式子，初始化的时候不可以。
+</code></pre>
+<h2 id="函数调用操作符">函数调用操作符</h2>
+<p><code>()</code><br>
+操作数：函数名与参数</p>
+<h2 id="结构体成员操作符">结构体成员操作符</h2>
+<p><code>  .  -&gt;</code><br>
+用法：</p>
+<ol>
+<li>结构体类型变量名.结构体类型成员名字</li>
+</ol>
+<pre><code class="language-c">struct stu
+{//定义stu结构体类型名，仅仅是定义一种类型名字，没有变量，不可以在里面对成员进行初始化
+	char name[20];
+	int age;
+	float sint main();
+    };
+    int main()
+{
+	struct stu s = { &quot;lichaoxiang&quot;,18,100.0 };//创建struct stu 型变量
+	printf(&quot;%s %d,%.2f&quot;, s.name, s.age, s.score);
+	return 0;
+};
+
+</code></pre>
+<ol start="2">
+<li>结构体指针-&gt;成员名字</li>
+</ol>
+<pre><code class="language-c">struct stu
+{
+	char name[20];
+	int age;
+	float score;
+};
+int main()
+{
+	struct stu s = { &quot;lichaoxiang&quot;,20,100.0 };//创建stu型变量s并完成初始化
+	struct stu* ps = &amp;s;
+	printf(&quot;%s %d %lf&quot;, ps-&gt;name, ps-&gt;age, ps-&gt;score);
+	return 0;
+}
+ps-&gt;age完全等价于
+(*ps).age
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2.6日-C语言操作符（初阶）]]></title>
+        <id>https://Furina-77-best.github.io/post/26-ri-c-yu-yan-cao-zuo-fu-chu-jie/</id>
+        <link href="https://Furina-77-best.github.io/post/26-ri-c-yu-yan-cao-zuo-fu-chu-jie/">
+        </link>
+        <updated>2026-02-06T01:28:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="c语言操作符">C语言操作符</h1>
+<p>一共有：算术、<strong>移位</strong>、<strong>位</strong>、赋值、单目、逻辑、关系、条件、逗号、下标引用、函数调用、<strong>结构体成员</strong>操作符！</p>
+<h2 id="算术操作符">算术操作符</h2>
+<p>加减乘除求余</p>
+<ol>
+<li>% （求余操作符）两端必须为整数</li>
+<li>/ （除数操作符）两端为整数，则执行整除（舍弃小树部分），若两端但凡有一个小数则执行浮点数除法。<br>
+<code>int a  = 7%2,int b = 7/2</code></li>
+</ol>
+<h2 id="移位操作符">移位操作符</h2>
+<p>&lt;&lt; 左移（乘二） 右移&gt;&gt;<br>
+移动的是整数补码的二进制序列，只针对整数！</p>
+<ul>
+<li>左移就是补码整体向左边移动，左边丢掉，右边补零</li>
+</ul>
+<h3 id="二进制">二进制</h3>
+<p>整数的二进制表示有3种：原码，反码，补码！<br>
+在屏幕上打印是按原码对应的值滴，在内存中是按整数的补码存储的！</p>
+<ul>
+<li>正的整数的原码、反码、补码相同。</li>
+<li>负的整数的原码、反码、补码是要计算的</li>
+</ul>
+<pre><code class="language-c">7
+原码=补码=反码：00000000000000000000000000000111
+-7
+原码：10000000000000000000000000000111（二进制序列高位0表示正数，1表示负数）
+反码：11111111111111111111111111111000（符号位不变，其余取反，0变为1，1变为0）
+补码：11111111111111111111111111111001（反码加一）
+</code></pre>
+<h3 id="右移操作符">右移操作符</h3>
+<ul>
+<li>算术移位：右边丢弃，左边补原符号位，原来是负数就补一，是正数就补零；</li>
+<li>逻辑移位：右边丢弃，左边补零；<br>
+<strong>二进制转十进制的核心规则</strong><br>
+二进制数的每一位都对应一个权值，权值的计算规则是：从右往左数，第 n 位（从 0 开始计数）的权值是 2^n（2 的 n 次方）。<br>
+<strong>计算时，只需将 “每一位的数字 × 对应权值” 后求和，就是对应的十进制数。</strong></li>
+</ul>
+<h1 id="位运算符">位运算符</h1>
+<p>操作对象均为整数，不能是浮点数。<br>
+下列运算符都是对运算对象的补码进行一一操作。0</p>
+<ul>
+<li>&amp; - 按（二进制）位与，有一个零则结果位为0，同时为1则结果位为1；</li>
+<li>|   -按（二进制）位或，有一个1则结果位为1，同时为0则结果位为0；</li>
+<li>^ - 按（二进制）位异或，二进制位相同为0，不同则为1；</li>
+</ul>
+<ol>
+<li>a ^ a=0;</li>
+<li>0^a=a;</li>
+<li>a<sup>b</sup>a=b;</li>
+<li>a ^ b ^ b=a;<strong>一个数异或同一个数两次，结果等于它本身（x ^ y ^ y = x）</strong></li>
+</ol>
+<h1 id="赋值运算符">赋值运算符</h1>
+<p>= (一个等于号 )</p>
+<h2 id="复合操作符">复合操作符</h2>
+<p>+=......</p>
+<h1 id="单目操作符">单目操作符</h1>
+<p>C语言中0表示假，非0表示真。</p>
+<ol>
+<li>! 真的变假，假的变真<br>
+<code> if(!flag){}当flag为假进入if语句</code></li>
+</ol>
+<h2 id="取地址操作符">&amp;取地址操作符</h2>
+<p>&amp;取的是变量在内存中的起始地址</p>
+<h2 id="sizeof">sizeof</h2>
+<p>计算的是变量所占内存空间的大小</p>
+]]></content>
+    </entry>
+</feed>
